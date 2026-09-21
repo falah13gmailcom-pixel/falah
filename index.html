@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>فلاح ستور</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+font-family:Tahoma,Arial,sans-serif;
+background:#0b0f19;
+color:white;
+line-height:1.8;
+}
+
+header{
+background:#111827;
+padding:15px 5%;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+}
+
+.logo img{
+width:55px;
+height:55px;
+object-fit:contain;
+}
+
+nav{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+nav a:hover{color:#00d084}
+
+.hero{
+padding:35px 5%;
+text-align:center;
+}
+
+.hero-image{
+width:100%;
+max-width:900px;
+border-radius:20px;
+display:block;
+margin:0 auto 30px;
+}
+
+.hero h1{font-size:34px}
+.hero h1 span{color:#00d084}
+.hero p{color:#cbd5e1;font-size:18px}
+
+section{padding:45px 5%}
+
+.title{
+text-align:center;
+margin-bottom:30px;
+}
+
+.title h2{font-size:30px}
+.title p{color:#94a3b8}
+
+.category-title{
+text-align:center;
+color:#00d084;
+font-size:25px;
+margin:35px 0 20px;
+}
+
+.program-cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:20px;
+max-width:1100px;
+margin:auto;
+}
+
+.program-card{
+background:#111827;
+border:1px solid #263244;
+border-radius:18px;
+padding:25px;
+text-align:center;
+}
+
+.program-icon{font-size:42px}
+
+.program-card h3{
+font-size:21px;
+margin:10px 0;
+}
+
+.program-desc{color:#cbd5e1}
+
+.program-button,
+.whatsapp{
+display:inline-block;
+background:#00d084;
+color:#06100c;
+padding:10px 22px;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+margin-top:15px;
+}
+
+.prices{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:18px;
+max-width:1000px;
+margin:auto;
+}
+
+.price{
+background:#111827;
+border:1px solid #263244;
+border-radius:16px;
+padding:22px;
+text-align:center;
+}
+
+.price strong{
+display:block;
+font-size:25px;
+color:#00d084;
+}
+
+.contact{
+text-align:center;
+background:#111827;
+}
+
+.contact p{
+margin:8px 0;
+color:#cbd5e1;
+}
+
+footer{
+text-align:center;
+padding:25px;
+color:#94a3b8;
+background:#080c14;
+}
+
+@media(max-width:600px){
+header{flex-direction:column}
+nav{justify-content:center}
+.hero h1{font-size:27px}
+}
+</style>
+</head>
+
+<body>
+<header>
+<div class="logo">
+<img src="logo.png" alt="فلاح ستور">
+</div>
+
+<nav>
+<a href="#home">الرئيسية</a>
+<a href="#programs">البرامج</a>
+<a href="#prices">الأسعار</a>
+<a href="#contact">تواصل معنا</a>
+</nav>
+</header>
+
+<section class="hero" id="home">
+
+<img class="hero-image" src="hero.png" alt="فلاح ستور">
+
+<h1>أهلاً بكم في <span>فلاح ستور</span></h1>
+
+<p>خدمات وبرامج البث الرياضي والترفيهي</p>
+
+<section style="padding:25px 15px;">
+  <div style="background:#fff;border-radius:18px;padding:20px;text-align:center;box-shadow:0 5px 20px rgba(0,0,0,.12);max-width:400px;margin:auto;">
+    
+    <img src="najoom.png"
+         alt="شبكة نجوم الرابعة"
+         style="width:65px;height:65px;object-fit:contain;margin-bottom:10px;">
+
+    <h2 style="margin:5px 0;">شبكة نجوم الرابعة</h2>
+
+    <p style="font-size:18px;margin:10px 0;">
+      اشتراك شهر واحد
+    </p>
+
+    <div style="font-size:28px;font-weight:bold;margin:15px 0;">
+      25,000 د.ع
+    </div>
+
+    <button style="background:#16a34a;color:white;border:0;border-radius:10px;padding:12px 30px;font-size:17px;cursor:pointer;">
+<a href="https://wa.me/9647803734579?text=أريد%20اشتراك%20شبكة%20نجوم%20الرابعة%20شهر%20واحد%20بسعر%2025%20ألف%20دينار"
+   target="_blank"
+   style="display:inline-block;background:#16a34a;color:white;text-decoration:none;border-radius:10px;padding:12px 30px;font-size:17px;">
+  اشترك الآن
+</a>
+    </button>
+
+  </div>
+</section></section>
+<section id="programs">
+
+<div class="title">
+<h2>برامجنا</h2>
+<p>اختر الخدمة المناسبة لك</p>
+</div>
+
+<h2 class="category-title">البث الأرضي</h2>
+
+<div class="program-cards">
+
+<div class="program-card">
+<div class="program-icon">📺</div>
+<h3><span style="display:inline-flex;align-items:center;gap:8px;">
+  <img src="najoom.png" alt="شبكة نجوم الرابعة" style="width:32px;height:32px;object-fit:contain;">
+  شبكة نجوم الرابعة
+</span>
+<p class="program-desc">شبكة للبث والقنوات الرياضية والترفيهية</p>
+</div>
+
+<div class="program-card">
+<div class="program-icon">📡</div>
+<h3>شبكة ينابيع سومر</h3>
+<p class="program-desc">بث القنوات الرياضية والترفيهية</p>
+</div>
+
+</div>
+
+<h2 class="category-title">في أي بي IPTV</h2>
+
+<div class="program-cards">
+
+<div class="program-card">
+<div class="program-icon">🌐</div>
+<h3>برامج ماكس</h3>
+<p class="program-desc">يعمل عبر الإنترنت ويدعم مختلف الأجهزة</p>
+</div>
+
+<div class="program-card">
+<div class="program-icon">▶️</div>
+<h3>TOD</h3>
+<p class="program-desc">لمتابعة المباريات والدوريات عبر الإنترنت</p>
+</div>
+
+</div>
+
+<h2 class="category-title">منظومات البث</h2>
+
+<div class="program-cards">
+
+<div class="program-card">
+<div class="program-icon">📺</div>
+<h3>فلاح للبث الرقمي</h3>
+<p class="program-desc">منظومة بث للقنوات الرياضية والترفيهية</p>
+
+<a class="program-button"
+href="https://wa.me/9647803734579?text=السلام%20عليكم،%20أريد%20الاشتراك%20في%20فلاح%20ستور">
+اشترك الآن
+</a>
+
+</div>
+
+</div>
+
+</section>
+<section id="prices">
+
+<div class="title">
+<h2>أسعار الاشتراكات</h2>
+<p>اختر الاشتراك المناسب لك</p>
+</div>
+
+<div class="prices">
+
+<div class="price">
+<h3>شهر واحد</h3>
+<strong>6,000 د.ع</strong>
+</div>
+
+<div class="price">
+<h3>3 أشهر</h3>
+<strong>12,000 د.ع</strong>
+</div>
+
+<div class="price">
+<h3>6 أشهر</h3>
+<strong>17,000 د.ع</strong>
+</div>
+
+<div class="price">
+<h3>سنة كاملة</h3>
+<strong>30,000 د.ع</strong>
+</div>
+
+</div>
+
+</section>
+<section id="contact" class="contact">
+
+<div class="title">
+<h2>تواصل معنا</h2>
+<p>للاشتراك والاستفسار</p>
+</div>
+
+<p>📱 07803734579</p>
+<p>📱 07838695022</p>
+
+<a class="whatsapp"
+href="https://wa.me/9647803734579?text=السلام%20عليكم،%20أريد%20الاشتراك%20في%20فلاح%20ستور">
+تواصل عبر واتساب
+</a>
+
+</section>
+
+<footer>
+© 2026 فلاح ستور — جميع الحقوق محفوظة
+</footer>
+
+</body>
+</html>
+</div>
+
+<h2 class="category-title">منظومات البث</h2>
+<div class="program-cards">
+
+<div class="program-card">
+<div class="program-icon">📺</div>
+<h3>فلاح للبث الرقمي</h3>
+<p class="program-desc">منظومة بث للقنوات الرياضية والترفيهية</p>
+</div>
+
+</div>
+</section>
