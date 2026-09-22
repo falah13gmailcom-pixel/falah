@@ -391,3 +391,41 @@ href="https://wa.me/9647803734579?text=السلام%20عليكم،%20أريد%20
 
 </div>
 </section>
+<div class="slider">
+  <img src="final-1.jpg" class="slide active">
+  <img src="final-2.jpg" class="slide">
+  <img src="final-3.jpg" class="slide">
+  <img src="final-4.jpg" class="slide">
+  <img src="final-5.jpg" class="slide">
+  <img src="final-6.jpg" class="slide">
+</div>
+
+<style>
+.slider {
+  width: 100%;
+  max-width: 1100px;
+  margin: 25px auto;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.slide {
+  width: 100%;
+  display: none;
+}
+
+.slide.active {
+  display: block;
+}
+</style>
+
+<script>
+let current = 0;
+const slides = document.querySelectorAll('.slide');
+
+setInterval(() => {
+  slides[current].classList.remove('active');
+  current = (current + 1) % slides.length;
+  slides[current].classList.add('active');
+}, 4000);
+</script>
