@@ -229,6 +229,47 @@ nav{justify-content:center}
 }
 </style>
 
+
+<style>
+/* شكل بطاقات الاشتراك المختصرة */
+.program-card{
+  min-height:90px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+.program-card::before{
+  content:"اشتراك";
+  font-size:20px;
+  font-weight:bold;
+  color:#00d084;
+}
+
+.program-card > *{
+  display:none;
+}
+
+.program-card.open{
+  display:block;
+}
+
+.program-card.open::before{
+  display:none;
+}
+
+.program-card.open > *{
+  display:block;
+}
+
+.program-card.open .program-prices{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+</style>
+
 </head>
 
 <body>
