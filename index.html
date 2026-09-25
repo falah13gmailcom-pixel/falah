@@ -78,6 +78,53 @@ font-size:25px;
 margin:35px 0 20px;
 }
 
+
+/* الأقسام القابلة للفتح والإغلاق */
+.collapsible-title{
+  cursor:pointer;
+  user-select:none;
+  position:relative;
+  padding:15px 45px 15px 15px;
+  border-radius:14px;
+  transition:.3s;
+}
+
+.collapsible-title::after{
+  content:'＋';
+  position:absolute;
+  right:15px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:25px;
+}
+
+.collapsible-title.open::after{
+  content:'−';
+}
+
+.collapsible-content{
+  display:none;
+}
+
+.collapsible-content.open{
+  display:block;
+}
+
+/* إخفاء أسعار كل بطاقة بالبداية */
+.program-card .program-prices{
+  display:none;
+}
+
+.program-card.open .program-prices{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.program-card{
+  cursor:pointer;
+}
+
 .program-cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
@@ -545,6 +592,41 @@ function toggleCart(){
 }
 </script>
 
+
+
+<script>
+document.querySelectorAll('.program-card').forEach(function(card) {
+  card.addEventListener('click', function(e) {
+
+    /* لا نغلق البطاقة عند الضغط على زر الاشتراك */
+    if (e.target.closest('button, a')) return;
+
+    /* إذا البطاقة تحتوي أسعار، افتحها */
+    const prices = card.querySelector('.program-prices');
+    if (prices) {
+      card.classList.toggle('open');
+    }
+  });
+});
+</script>
+
+
+<script>
+document.querySelectorAll('.category-title').forEach(function(title) {
+  const content = title.nextElementSibling;
+
+  if (content && content.classList.contains('program-cards')) {
+    content.classList.add('collapsible-content');
+
+    title.classList.add('collapsible-title');
+
+    title.addEventListener('click', function() {
+      title.classList.toggle('open');
+      content.classList.toggle('open');
+    });
+  }
+});
+</script>
 
 </body>
 </html>
