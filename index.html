@@ -1,4 +1,4 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
@@ -162,7 +162,10 @@ nav{justify-content:center}
 </style>
 </head>
 
-<body>
+<body>sed -i '166i\
+<section style="padding:20px 5%;text-align:center;background:#0b0f19;">\
+<img src="max.png" alt="برامج ماكس" style="width:100%;max-width:1200px;border-radius:18px;display:block;margin:auto;">\
+</section>' index.html
 <header>
 <div class="logo">
 <img src="logo.png" alt="فلاح ستور">
@@ -356,7 +359,6 @@ href="https://wa.me/9647803734579?text=السلام%20عليكم،%20أريد%20
 
 
 
-</body>
 <div style="width:100%; max-width:1000px; margin:20px auto; overflow:hidden; border-radius:18px;">
   <img src="hero.png" style="width:100%; display:block; border-radius:18px;">
 </div>
@@ -375,7 +377,6 @@ href="https://wa.me/9647803734579?text=السلام%20عليكم،%20أريد%20
     <p style="margin-top:20px;">🎁 عروض خاصة لأصحاب البيجات والحسابات</p>
   </div>
 </section>
-</html>
 
 </div>
 </section>
@@ -417,3 +418,127 @@ setInterval(() => {
   slides[current].classList.add('active');
 }, 4000);
 </script>
+
+<!-- FALAH STORE CART -->
+<div id="cart-button" onclick="toggleCart()">
+🛒 السلة (<span id="cart-count">0</span>)
+</div>
+
+<div id="cart-box">
+  <div class="cart-header">
+    <h2>🛒 سلة المشتريات</h2>
+    <button onclick="toggleCart()">✕</button>
+  </div>
+
+  <div id="cart-items">
+    <p>السلة فارغة</p>
+  </div>
+
+  <div class="cart-footer">
+    <strong>المجموع: <span id="cart-total">0 د.ع</span></strong>
+    <button onclick="sendOrder()">إتمام الطلب عبر واتساب</button>
+  </div>
+</div>
+
+<style>
+#cart-button{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  z-index:9999;
+  background:#00d084;
+  color:#07100c;
+  padding:12px 18px;
+  border-radius:30px;
+  font-weight:bold;
+  cursor:pointer;
+  box-shadow:0 8px 25px rgba(0,0,0,.35);
+}
+
+#cart-box{
+  display:none;
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:92%;
+  max-width:480px;
+  max-height:80vh;
+  overflow:auto;
+  background:#111827;
+  color:white;
+  z-index:10000;
+  border:1px solid #263244;
+  border-radius:20px;
+  padding:20px;
+  box-shadow:0 20px 60px rgba(0,0,0,.6);
+}
+
+.cart-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.cart-header button{
+  background:#ef4444;
+  color:white;
+  border:0;
+  border-radius:8px;
+  padding:7px 12px;
+  cursor:pointer;
+}
+
+.cart-item{
+  background:#0b0f19;
+  padding:12px;
+  margin-bottom:10px;
+  border-radius:12px;
+  display:grid;
+  grid-template-columns:1fr auto auto auto;
+  gap:8px;
+  align-items:center;
+}
+
+.cart-item button{
+  background:#00d084;
+  border:0;
+  border-radius:6px;
+  padding:4px 9px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.cart-footer{
+  border-top:1px solid #263244;
+  margin-top:15px;
+  padding-top:15px;
+}
+
+.cart-footer button{
+  width:100%;
+  margin-top:15px;
+  padding:13px;
+  border:0;
+  border-radius:10px;
+  background:#00d084;
+  color:#07100c;
+  font-weight:bold;
+  cursor:pointer;
+}
+</style>
+
+<script src="cart.js"></script>
+
+<script>
+function toggleCart(){
+  const box = document.getElementById("cart-box");
+  box.style.display =
+    box.style.display === "block" ? "none" : "block";
+}
+</script>
+
+
+</body>
+</html>
