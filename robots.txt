@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://falah13gmailcom-pixel.github.io/falah/sitemap.xml
