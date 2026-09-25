@@ -215,25 +215,17 @@ nav{justify-content:center}
   margin: 20px auto;
   overflow: hidden;
   border-radius: 18px;
+  position: relative;
 }
-.falah-slides {
-  display: flex;
-  width: 500%;
-  animation: falahSlide 15s infinite;
-}
-.falah-slides img {
-  width: 20%;
+
+.falah-slide {
+  width: 100%;
+  display: none;
   height: auto;
-  display: block;
-  object-fit: cover;
 }
-@keyframes falahSlide {
-  0%, 18% { transform: translateX(0); }
-  20%, 38% { transform: translateX(-20%); }
-  40%, 58% { transform: translateX(-40%); }
-  60%, 78% { transform: translateX(-60%); }
-  80%, 98% { transform: translateX(-80%); }
-  100% { transform: translateX(0); }
+
+.falah-slide.active {
+  display: block;
 }
 </style>
 
@@ -260,14 +252,23 @@ nav{justify-content:center}
 
 <h1>أهلاً بكم في <span>فلاح ستور</span></h1>
 <div class="falah-slider">
-  <div class="falah-slides">
-    <img src="slider1.jpg" alt="فلاح ستور">
-    <img src="slider2.jpg" alt="فلاح ستور">
-    <img src="slider3.jpg" alt="فلاح ستور">
-    <img src="slider4.jpg" alt="فلاح ستور">
-    <img src="slider5.jpg" alt="فلاح ستور">
-  </div>
+  <img src="slider1.jpg" alt="فلاح ستور" class="falah-slide active">
+  <img src="slider2.jpg" alt="فلاح ستور" class="falah-slide">
+  <img src="slider3.jpg" alt="فلاح ستور" class="falah-slide">
+  <img src="slider4.jpg" alt="فلاح ستور" class="falah-slide">
+  <img src="slider5.jpg" alt="فلاح ستور" class="falah-slide">
 </div>
+
+<script>
+const slides = document.querySelectorAll(".falah-slide");
+let currentSlide = 0;
+
+setInterval(function () {
+  slides[currentSlide].classList.remove("active");
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].classList.add("active");
+}, 3000);
+</script>
 
 
 
